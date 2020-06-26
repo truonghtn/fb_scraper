@@ -1,0 +1,23 @@
+{
+    "import": [
+        "dist/scrapers/connections/*.js",
+        "dist/scrapers/engines/*.js",
+        "dist/scrapers/loggers/*.js",
+        "dist/scrapers/pages/*.js",
+        "dist/scrapers/scrapers/*.js",
+        "dist/scrapers/collectors/*.js"
+    ],
+    "logger": {
+        "type": "pp_screenshot",
+        "text_logger": "console",
+        "logDir": "data/scrapers/screenshots"
+    },
+    "engine": {
+        "type": "null"
+    },
+    "scrapers": [
+        {
+            "type": "null"
+        }
+    ]
+}

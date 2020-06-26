@@ -1,0 +1,11 @@
+{
+  "puppeteer": {
+    "devtools": false,
+    "args": [
+      "--blink-settings=imagesEnabled=false"
+    ]
+  },
+  "username": "0938468566",
+  "password": "liveyourlife",
+  "redisKey": "scraper:fb"
+}

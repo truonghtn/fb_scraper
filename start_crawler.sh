@@ -1,0 +1,1 @@
+node dist/app.js --config=data/config/scrapers.json

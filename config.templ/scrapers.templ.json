@@ -1,0 +1,69 @@
+{
+    "import": [
+        "dist/scrapers/connections/*.js",
+        "dist/scrapers/engines/*.js",
+        "dist/scrapers/loggers/*.js",
+        "dist/scrapers/pages/*.js",
+        "dist/scrapers/collectors/*.js",
+        "dist/scrapers/scrapers/nComments/*.js",
+        "dist/scrapers/scrapers/ads/*.js",
+        "dist/scrapers/scrapers/nLikes/*.js"
+    ],
+    "logger": {
+        "type": "fluentd",
+        "tag": "comments-raw-data",
+        "port": 24224
+    },
+    "engine": {
+        "type": "rmq",
+        "queue": "scraper_reqs"
+    },
+    "scrapers": [
+        {
+            "type": "fb_ad_api",
+            "browser": {
+                "type": "redis_browser",
+                "redis_key": "scraper:fb"
+            },
+            "fetch_size": 1000,
+            "adCollector": {
+                "type": "mongo",
+                "mongo": {
+                    "connection": "mongodb://localhost:27017/fb_scrapers"
+                },
+                "db": "fb_scrapers",
+                "collection": "posts"
+            }
+        },
+        {
+            "type": "fb_n_comment_api",
+            "browser": {
+                "type": "redis_browser",
+                "redis_key": "scraper:fb"
+            },
+            "n_comment_collector": {
+                "type": "mongo",
+                "mongo": {
+                    "connection": "mongodb://localhost:27017/fb_scrapers"
+                },
+                "db": "fb_scrapers",
+                "collection": "nComments"
+            }
+        },
+        {
+            "type": "fb_n_like_api",
+            "browser": {
+                "type": "redis_browser",
+                "redis_key": "scraper:fb"
+            },
+            "n_like_collector": {
+                "type": "mongo",
+                "mongo": {
+                    "connection": "mongodb://localhost:27017/fb_scrapers"
+                },
+                "db": "fb_scrapers",
+                "collection": "nLikes"
+            }
+        }
+    ]
+}

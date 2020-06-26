@@ -1,0 +1,1 @@
+node dist/http_server.js --config=data/config/http_server.json

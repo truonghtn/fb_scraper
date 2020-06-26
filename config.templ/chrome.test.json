@@ -1,0 +1,11 @@
+{
+    "puppeteer": {
+        "headless": false,
+        "args": [
+            "--blink-settings=imagesEnabled=false"
+        ]
+    },
+    "username": "less.lucifer@hotmail.com.vn",
+    "password": "khongco123",
+    "redisKey": "scraper:fb"
+}

@@ -1,0 +1,7 @@
+*.js.map
+*.js
+.vscode
+node_modules
+typings
+data
+package-lock.json
