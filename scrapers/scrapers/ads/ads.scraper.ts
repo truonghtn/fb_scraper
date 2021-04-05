@@ -1,7 +1,7 @@
 import * as cheerio from 'cheerio';
 import * as _ from 'lodash';
 import * as nodeFetch from 'node-fetch';
-import * as scrollPageToBottom from 'puppeteer-autoscroll-down';
+import { scrollPageToBottom } from 'puppeteer-autoscroll-down';
 import * as querystring from 'querystring';
 import * as url from 'url';
 import { IScrapeLogger } from '../../logger';

@@ -119,7 +119,7 @@ class Program {
     }))
 
     server.get('/profiles/:fids', hera.routeAsync(async (req) => {
-      const fids: string = req.params.fids.split(',');
+      const fids: string[] = req.params.fids.split(',');
       const profileColl = db.collection('profile');
       const profiles = await profileColl.find({ id: { $in: fids } }).toArray();
       return profiles;

@@ -11,7 +11,7 @@ export class FluentdCollector implements IScrapeCollector {
     ) {}
 
     async collect(...data: any[]): Promise<void> {
-        await Promise.all(data.map(d => new Promise((res, rej) => this.logger.emit(this.label, d, undefined, (err) => err ? rej(err) : res()))));
+        await Promise.all(data.map(d => new Promise((res, rej) => this.logger.emit(this.label, d, undefined, (err) => err ? rej(err) : res(null)))));
     }
 }
 
