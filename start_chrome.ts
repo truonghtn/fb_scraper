@@ -57,13 +57,15 @@ class Program {
         await page.type('#email', `${username}`);
         await page.focus('#pass');
         await page.type('#pass', `${pass}`);
-        await page.click('#loginbutton input');
+
+        const btn = await page.$('[name="login"]');
+        btn.click();
 
         await page.waitForNavigation({waitUntil: 'load'});
         await page.waitFor(500);
 
         try {
-            await page.waitForSelector('#pagelet_navigation', {timeout: 3000});
+            await page.waitForSelector('#ssrb_top_nav_start', {timeout: 3000});
         }
         catch (err) {
             throw new Error('Login failed')!

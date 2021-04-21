@@ -17,7 +17,7 @@ export class FBNLikeScraperProvider extends ScrapeObjectProvider {
         '+n_like_collector': {},
         '+seeds': {
             'type': 'array',
-            '@itesm': 'string',
+            '@items': 'string',
             'minItems': 1
         }
     });

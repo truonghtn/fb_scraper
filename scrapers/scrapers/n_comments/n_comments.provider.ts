@@ -16,7 +16,7 @@ export class FBNCommentAPIScraperProvider extends ScrapeObjectProvider {
         '+n_comment_collector': {},
         '+seeds': {
             'type': 'array',
-            '@itesm': 'string',
+            '@items': 'string',
             'minItems': 1
         }
     });

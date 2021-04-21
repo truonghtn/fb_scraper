@@ -28,6 +28,7 @@ export class MongoDBConnectionProvider extends ScrapeObjectProvider {
         if (this.connections.has(hash)) return this.connections.get(hash);
 
         const conn: string = _.isString(config) ? config : config.connection;
+        config["useUnifiedTopology"] = true
         const client: mongodb.MongoClient = await mongodb.MongoClient.connect(conn, <mongodb.MongoClientOptions> config);
         this.connections.set(hash, client);
         return client;

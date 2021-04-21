@@ -16,7 +16,7 @@ export class FBAdAPIScraperProvider extends ScrapeObjectProvider {
         '+store': {},
         '+seeds': {
             'type': 'array',
-            '@itesm': 'string',
+            '@items': 'string',
             'minItems': 1
         }
     });

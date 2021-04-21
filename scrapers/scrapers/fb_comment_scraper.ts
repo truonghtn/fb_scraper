@@ -197,7 +197,7 @@ export class FBCommentAPIScraperProvider extends ScrapeObjectProvider {
         '+profile_collector': {},
         '+seeds': {
             'type': 'array',
-            '@itesm': 'string',
+            '@items': 'string',
             'minItems': 1
         }
     });

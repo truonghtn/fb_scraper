@@ -214,7 +214,7 @@ export class FBLikeScraperProvider extends ScrapeObjectProvider {
 		'@fetch_size': 'integer|>0',
         '+seeds': {
             'type': 'array',
-            '@itesm': 'string',
+            '@items': 'string',
             'minItems': 1
         }
 	});
