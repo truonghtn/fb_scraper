@@ -50,7 +50,7 @@ class Program {
 
     static async login(page: pp.Page, username: string, pass: string) {
         console.log(`${username}: ${pass}`);
-        await page.goto('https://facebook.com', {waitUntil: 'networkidle2'});
+        await page.goto('https://www.facebook.com/login', {waitUntil: 'networkidle2'});
         await page.addScriptTag({path: require.resolve('jquery')});
         
         await page.focus('#email');
