@@ -69,7 +69,7 @@ export class FBNLikeScraper implements IScraper {
     }
 
     isScrapeable(req: IScrapeRequest): boolean {
-        return req.data.type == "n_like_api" && _.isString(req.data.postId);
+        return req.data.type == "fb_n_like_api" && _.isString(req.data.postId);
     }
 
     async scrape(req: IScrapeRequest): Promise<any> {

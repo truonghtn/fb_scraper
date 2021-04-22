@@ -68,8 +68,8 @@ class Program {
       likes.map(fid => {
         // if (!hera.isURL(url) || !url.includes('facebook')) throw new AppLogicError('Cannot scrape fb like! Invalid URL', 400);
         const msg = {
-          type: "like_api",
-          fid
+          type: "fb_n_like_api",
+          postId: fid
         };
         rpc.send(queue, Buffer.from(JSON.stringify(msg)));
       })

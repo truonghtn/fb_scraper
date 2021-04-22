@@ -8,7 +8,7 @@ import { ScrapeService } from './scrapers/serv';
 class Program {
   public static async main(): Promise<number> {
     const args = minimist(process.argv.slice(2));
-    const config = 'env.json';
+    const config = args["config"]
     if (_.isEmpty(config)) throw new Error('Config file must be specified!!');
 
     const serv = new ScrapeService();
