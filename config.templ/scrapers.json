@@ -71,6 +71,24 @@
                 "db": "fb_scrapers",
                 "collection": "nLikes"
             }
+        },
+        {
+            "type": "fb_posts_api",
+            "browser": {
+                "type": "redis_browser",
+                "redis_key": "scraper:fb"
+            },
+            "posts_collector": {
+                "type": "mongo",
+                "mongo": {
+                    "connection": "mongodb://localhost:27017/fb_scrapers"
+                },
+                "db": "fb_scrapers",
+                "collection": "posts"
+            },
+            "seeds": [
+                "https://www.facebook.com/groups/300834413405242"
+            ]
         }
     ]
 }

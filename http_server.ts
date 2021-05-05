@@ -77,6 +77,21 @@ class Program {
       return HC.SUCCESS
     }));
 
+    server.post('/scrapes/posts', hera.routeAsync(async (req) => {
+      const posts: any[] = req.body.posts;
+
+      posts.map(fid => {
+        // if (!hera.isURL(url) || !url.includes('facebook')) throw new AppLogicError('Cannot scrape fb like! Invalid URL', 400);
+        const msg = {
+          type: "fb_posts_api",
+          postId: fid
+        };
+        rpc.send(queue, Buffer.from(JSON.stringify(msg)));
+      })
+
+      return HC.SUCCESS
+    }));
+
     server.post('/scrapes/fb_post', hera.routeAsync(async (req) => {
       const posts: any[] = req.body.posts;
       posts.map(pageId => {

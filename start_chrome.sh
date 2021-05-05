@@ -1,1 +1,1 @@
-node dist/start_chrome.js --config=data/config/chrome.json
+node dist/start_chrome.js --config=data/config/chrome.test.json
