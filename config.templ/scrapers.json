@@ -73,7 +73,7 @@
             }
         },
         {
-            "type": "fb_posts_api",
+            "type": "fb_posts_in_groups_api",
             "browser": {
                 "type": "redis_browser",
                 "redis_key": "scraper:fb"
@@ -85,6 +85,12 @@
                 },
                 "db": "fb_scrapers",
                 "collection": "posts"
+            },
+            "store": {
+                "redis": {
+                    "host": "127.0.0.1",
+                    "post": 6379
+                }
             },
             "seeds": [
                 "https://www.facebook.com/groups/300834413405242"
