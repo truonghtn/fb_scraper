@@ -67,11 +67,11 @@ export class FBPostsScraper implements IScraper {
     }
 
     isScrapeable(req: IScrapeRequest): boolean {
-        return req.data.type == "fb_posts_api" && _.isString(req.data.postId);
+        return req.data.type == "fb_posts_in_groups_api" && _.isString(req.data.groupId);
     }
 
     async scrape(req: IScrapeRequest): Promise<any> {
-        const groupId = req.data.postId;
+        const groupId = req.data.groupId;
         const limit = req.data.limit;
         let dataCrawl;
 
@@ -99,6 +99,7 @@ export class FBPostsScraper implements IScraper {
                     }
                 })
                 await hera.unboxPromise(this.collector.collect(...dataSaving));
+                console.log(dataSaving)
             }
             if (lastCursor) {
                 await this.dataStore.set(`LAST_CURSOR_OF_POST_OF_GROUP_${groupId}`, lastCursor);

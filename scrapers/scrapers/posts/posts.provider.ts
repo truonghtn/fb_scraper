@@ -12,7 +12,7 @@ const ajv2 = newAjv2();
 
 export class FBPostsScraperProvider extends ScrapeObjectProvider {
     readonly type = "SCRAPER";
-    readonly name = "fb_posts_api";
+    readonly name = "fb_posts_in_groups_api";
     private readonly configValidator = ajv2({
         '+browser': {},
         '+posts_collector': {},

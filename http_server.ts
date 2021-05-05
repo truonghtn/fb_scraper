@@ -77,14 +77,14 @@ class Program {
       return HC.SUCCESS
     }));
 
-    server.post('/scrapes/posts', hera.routeAsync(async (req) => {
-      const posts: any[] = req.body.posts;
+    server.post('/scrapes/posts_in_groups', hera.routeAsync(async (req) => {
+      const groups: any[] = req.body.groups;
 
-      posts.map(fid => {
-        // if (!hera.isURL(url) || !url.includes('facebook')) throw new AppLogicError('Cannot scrape fb like! Invalid URL', 400);
+      groups.map(g => {
         const msg = {
-          type: "fb_posts_api",
-          postId: fid
+          type: "fb_posts_in_groups_api",
+          groupId: g.gid,
+          limit: g.limit
         };
         rpc.send(queue, Buffer.from(JSON.stringify(msg)));
       })
